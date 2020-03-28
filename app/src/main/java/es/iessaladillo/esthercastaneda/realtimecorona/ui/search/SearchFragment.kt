@@ -52,6 +52,10 @@ class SearchFragment : Fragment() {
         txtActualCases.text = searchViewModel.infoCountry.active.toString()
         txtRecovered.text = searchViewModel.infoCountry.recovered.toString()
         txtDeaths.text = searchViewModel.infoCountry.deaths.toString()
+        txtTodayCases.text = searchViewModel.infoCountry.todayCases.toString()
+        txtTodayDeaths.text = searchViewModel.infoCountry.todayDeaths.toString()
+        txtCasesPerMillion.text = searchViewModel.infoCountry.casesPerOneMillion.toString()
+        txtDeathsPerMillion.text = searchViewModel.infoCountry.deathsPerOneMillion.toString()
 
         context?.let {
             val flag = searchViewModel.infoCountry.countryInfo?.flag
