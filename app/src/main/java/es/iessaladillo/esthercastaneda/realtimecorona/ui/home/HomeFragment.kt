@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.observe
 import com.google.gson.Gson
 import es.iessaladillo.esthercastaneda.realtimecorona.R
 import es.iessaladillo.esthercastaneda.realtimecorona.api.All
@@ -25,8 +27,12 @@ class HomeFragment : Fragment() {
         .build()
 
     private val apiService = CoronaAPI(cliente)
+    private lateinit var homeViewModel: HomeViewModel
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? = inflater.inflate(R.layout.fragment_home, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
+        return inflater.inflate(R.layout.fragment_home, container, false)
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -35,12 +41,24 @@ class HomeFragment : Fragment() {
 
     private fun setupViews() {
         showCountries()
+
+        homeViewModel.totalCases.observe(this) {
+            txtTotalCases.text = it.toString()
+        }
+        homeViewModel.actualCases.observe(this) {
+            txtActualCases.text = it.toString()
+        }
+        homeViewModel.recovered.observe(this) {
+            txtRecovered.text = it.toString()
+        }
+        homeViewModel.deaths.observe(this) {
+            txtDeaths.text = it.toString()
+        }
     }
 
     private fun showCountries() {
         CompletableFuture.allOf(apiService.getTotal().thenAcceptAsync(this::getAllCountriesNumbers)).join()
     }
-
     private fun getAllCountriesNumbers(response: Response){
         try {
             val rb = response.body()
@@ -51,8 +69,10 @@ class HomeFragment : Fragment() {
                 val gson = Gson()
                 val infoCountries = gson.fromJson(countries, All::class.java)
 
-                info.text = String.format("Cases: %s%nDeaths: %s%nRecovered: %s%n",
-                            infoCountries.cases.toString(), infoCountries.deaths.toString(), infoCountries.recovered.toString())
+                homeViewModel.setTotalCases(infoCountries.cases)
+                homeViewModel.setActualCases(infoCountries.active)
+                homeViewModel.setDeaths(infoCountries.deaths)
+                homeViewModel.setRecovered(infoCountries.recovered)
             }
         } catch (e: IOException) {
             e.printStackTrace()

@@ -1,5 +1,7 @@
 package es.iessaladillo.esthercastaneda.realtimecorona.ui.search
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import es.iessaladillo.esthercastaneda.realtimecorona.api.CoronaAPI
@@ -21,6 +23,8 @@ class SearchViewModel : ViewModel() {
 
     private val apiService = CoronaAPI(cliente)
 
+    var infoCountry: Country = Country()
+
     fun showCountry(country: String) : String {
         CompletableFuture.allOf(apiService.getCountry(country).thenAcceptAsync(this::showResponse)).join()
         return info
@@ -32,18 +36,18 @@ class SearchViewModel : ViewModel() {
             if(rb != null){
 
                 val country = rb.string()
+                val aux = country.replace("{", "")
+                    .replace("}", "")
+                    .replace("\"", "")
 
-                if (country.equals("Country not found")) {
-                    info = country
+                if ( aux.startsWith("message")) {
+                    info = "Country not found or doesn't have any cases"
+
                 } else {
                     val gson = Gson()
-                    val infoCountry = gson.fromJson(country, Country::class.java)
-
-                    info = String.format(  "Country: %s%nCases: %d%nCritical: %d%nDeaths: %d%nRecovered: %d%nToday cases: %d%nToday Deaths: %d%n",
-                        infoCountry.country, infoCountry.cases, infoCountry.critical, infoCountry.deaths,
-                        infoCountry.recovered, infoCountry.todayCases, infoCountry.todayDeaths)
+                    infoCountry = gson.fromJson(country, Country::class.java)
+                    info = ""
                 }
-
             }
         } catch (e: IOException) {
             e.printStackTrace()

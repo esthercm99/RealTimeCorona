@@ -60,7 +60,7 @@ class Country {
      */
     constructor(
         country: String?,
-        countryInfo: CountryInfo?,
+        countryInfo: CountryInfo,
         cases: Long?,
         todayCases: Long?,
         deaths: Long?,

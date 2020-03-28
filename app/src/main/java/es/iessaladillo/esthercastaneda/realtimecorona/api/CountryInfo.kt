@@ -9,10 +9,10 @@ class CountryInfo {
     var id: Int? = null
     @SerializedName("lat")
     @Expose
-    var lat: Int? = null
+    var lat: Float? = null
     @SerializedName("long")
     @Expose
-    var long: Int? = null
+    var long: Float? = null
     @SerializedName("flag")
     @Expose
     var flag: String? = null
@@ -40,8 +40,8 @@ class CountryInfo {
      */
     constructor(
         id: Int?,
-        lat: Int?,
-        _long: Int?,
+        lat: Float?,
+        _long: Float?,
         flag: String?,
         iso3: String?,
         iso2: String?
