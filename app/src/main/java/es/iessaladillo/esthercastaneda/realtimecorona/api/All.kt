@@ -4,19 +4,21 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 class All {
-
     @SerializedName("cases")
     @Expose
-    var cases: Int? = null
+    var cases: Long? = null
     @SerializedName("deaths")
     @Expose
-    var deaths: Int? = null
+    var deaths: Long? = null
     @SerializedName("recovered")
     @Expose
-    var recovered: Int? = null
+    var recovered: Long? = null
     @SerializedName("updated")
     @Expose
     var updated: Long? = null
+    @SerializedName("active")
+    @Expose
+    var active: Long? = null
 
     /**
      * No args constructor for use in serialization
@@ -28,14 +30,16 @@ class All {
      *
      * @param recovered
      * @param cases
+     * @param active
      * @param updated
      * @param deaths
      */
-    constructor(cases: Int?, deaths: Int?, recovered: Int?, updated: Long?) : super() {
+    constructor(cases: Long?, deaths: Long?, recovered: Long?, updated: Long?, active: Long?) : super() {
         this.cases = cases
         this.deaths = deaths
         this.recovered = recovered
         this.updated = updated
+        this.active = active
     }
 
 }
