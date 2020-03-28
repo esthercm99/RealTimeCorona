@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="whiteHint">#88FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="divider" tools:ignore="UnusedResources">#80808080</color>
+
+    <color name="indigo">#3F51B5</color>
 </resources>

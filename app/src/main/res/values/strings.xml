@@ -4,4 +4,13 @@
     <string name="title_countries">Countries</string>
     <string name="title_search">Search</string>
     <string name="world">World</string>
+    <string name="actual_cases">Actual cases</string>
+    <string name="today_cases">Today Cases</string>
+    <string name="today_deaths">Today deaths</string>
+    <string name="cases_1m">Cases / 1M</string>
+    <string name="deaths_1m">Deaths / 1M</string>
+    <string name="total_cases">Total cases</string>
+    <string name="recovered">Recovered</string>
+    <string name="deaths">Deaths</string>
+    <string name="countries">Countries</string>
 </resources>

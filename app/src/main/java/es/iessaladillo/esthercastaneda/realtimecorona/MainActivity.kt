@@ -1,5 +1,6 @@
 package es.iessaladillo.esthercastaneda.realtimecorona
 
+import android.graphics.Color
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -22,5 +23,9 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        navView.setBackgroundColor(getColor(R.color.indigo))
+        navView.itemTextColor = getColorStateList(R.color.white)
+        navView.itemIconTintList = getColorStateList(R.color.white)
     }
 }

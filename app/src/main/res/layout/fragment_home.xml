@@ -4,13 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:paddingTop="?attr/actionBarSize">
+    xmlns:tools="http://schemas.android.com/tools"
+        android:paddingTop="30dp">
 
     <ImageView
         android:id="@+id/imgWorld"
         android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/world"
+        android:layout_height="170dp"
+        android:src="@drawable/earth"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
