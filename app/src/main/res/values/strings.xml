@@ -13,4 +13,11 @@
     <string name="recovered">Recovered</string>
     <string name="deaths">Deaths</string>
     <string name="countries">Countries</string>
+    <string name="warningEmptyCountry">Put a country</string>
+    <string name="connectInternet">Please connect internet on your phone</string>
+    <string name="no_connection">No connection</string>
+    <string name="recovered">Recovered</string>
+    <string name="deaths">Deaths</string>
+    <string name="search_country">Search country...</string>
+    <string name="country_not_found">Country not found</string>
 </resources>
