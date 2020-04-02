@@ -1,4 +1,4 @@
-package es.iessaladillo.esthercastaneda.realtimecorona.ui.home
+package es.com.scoroleth.realtimecorona.ui.home
 
 import android.content.Context.CONNECTIVITY_SERVICE
 import android.net.ConnectivityManager
@@ -11,9 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.observe
 import com.google.gson.Gson
-import es.iessaladillo.esthercastaneda.realtimecorona.R
-import es.iessaladillo.esthercastaneda.realtimecorona.api.All
-import es.iessaladillo.esthercastaneda.realtimecorona.api.CoronaAPI
+import es.com.scoroleth.realtimecorona.R
+import es.com.scoroleth.realtimecorona.api.All
+import es.com.scoroleth.realtimecorona.api.CoronaAPI
 import kotlinx.android.synthetic.main.fragment_home.*
 import okhttp3.Response
 import java.io.IOException
@@ -28,7 +28,8 @@ class HomeFragment : Fragment() {
         .readTimeout(5000, TimeUnit.MILLISECONDS)
         .build()
 
-    private val apiService = CoronaAPI(cliente)
+    private val apiService =
+        CoronaAPI(cliente)
     private lateinit var homeViewModel: HomeViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

@@ -8,7 +8,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "es.iessaladillo.esthercastaneda.realtimecorona"
+        applicationId "es.com.scoroleth.realtimecorona"
         minSdkVersion 24
         targetSdkVersion 29
         versionCode 1

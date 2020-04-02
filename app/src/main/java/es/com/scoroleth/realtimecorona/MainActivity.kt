@@ -1,4 +1,4 @@
-package es.iessaladillo.esthercastaneda.realtimecorona
+package es.com.scoroleth.realtimecorona
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +18,10 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
         val appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.navigation_home, R.id.navigation_search)
+            setOf(
+                R.id.navigation_home,
+                R.id.navigation_search
+            )
         )
 
         setupActionBarWithNavController(navController, appBarConfiguration)

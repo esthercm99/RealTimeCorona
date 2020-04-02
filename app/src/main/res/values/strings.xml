@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CODVID19 Realtime</string>
+    <string name="app_name">COVID-19 Status</string>
     <string name="title_home">Home</string>
     <string name="title_countries">Countries</string>
     <string name="title_search">Search</string>
@@ -10,8 +10,6 @@
     <string name="cases_1m">Cases / 1M</string>
     <string name="deaths_1m">Deaths / 1M</string>
     <string name="total_cases">Total cases</string>
-    <string name="recovered">Recovered</string>
-    <string name="deaths">Deaths</string>
     <string name="countries">Countries</string>
     <string name="warningEmptyCountry">Put a country</string>
     <string name="connectInternet">Please connect internet on your phone</string>

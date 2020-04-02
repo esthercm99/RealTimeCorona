@@ -1,11 +1,9 @@
-package es.iessaladillo.esthercastaneda.realtimecorona.ui.search
+package es.com.scoroleth.realtimecorona.ui.search
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
-import es.iessaladillo.esthercastaneda.realtimecorona.api.CoronaAPI
-import es.iessaladillo.esthercastaneda.realtimecorona.api.Country
+import es.com.scoroleth.realtimecorona.api.CoronaAPI
+import es.com.scoroleth.realtimecorona.api.Country
 import okhttp3.OkHttpClient
 import okhttp3.Response
 import java.io.IOException
@@ -21,9 +19,11 @@ class SearchViewModel : ViewModel() {
         .readTimeout(5000, TimeUnit.MILLISECONDS)
         .build()
 
-    private val apiService = CoronaAPI(cliente)
+    private val apiService =
+        CoronaAPI(cliente)
 
-    var infoCountry: Country = Country()
+    var infoCountry: Country =
+        Country()
 
     fun showCountry(country: String) : String {
         CompletableFuture.allOf(apiService.getCountry(country).thenAcceptAsync(this::showResponse)).join()

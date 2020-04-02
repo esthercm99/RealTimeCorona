@@ -1,4 +1,4 @@
-package es.iessaladillo.esthercastaneda.realtimecorona.api
+package es.com.scoroleth.realtimecorona.api
 
 import okhttp3.Call
 import okhttp3.Callback

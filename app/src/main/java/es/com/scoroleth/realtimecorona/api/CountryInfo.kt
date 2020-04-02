@@ -1,4 +1,4 @@
-package es.iessaladillo.esthercastaneda.realtimecorona.api
+package es.com.scoroleth.realtimecorona.api
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

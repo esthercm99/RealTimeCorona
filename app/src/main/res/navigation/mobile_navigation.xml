@@ -7,19 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="es.iessaladillo.esthercastaneda.realtimecorona.ui.home.HomeFragment"
+        android:name="es.com.scoroleth.realtimecorona.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home"/>
-<!--
-    <fragment
-        android:id="@+id/navigation_countries"
-        android:name="es.iessaladillo.esthercastaneda.realtimecorona.ui.countries.CountriesFragment"
-        android:label="@string/title_countries"
-        tools:layout="@layout/fragment_dashboard" />
--->
+
     <fragment
         android:id="@+id/navigation_search"
-        android:name="es.iessaladillo.esthercastaneda.realtimecorona.ui.search.SearchFragment"
+        android:name="es.com.scoroleth.realtimecorona.ui.search.SearchFragment"
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search" />
 </navigation>

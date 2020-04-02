@@ -1,4 +1,4 @@
-package es.iessaladillo.esthercastaneda.realtimecorona.ui.home
+package es.com.scoroleth.realtimecorona.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

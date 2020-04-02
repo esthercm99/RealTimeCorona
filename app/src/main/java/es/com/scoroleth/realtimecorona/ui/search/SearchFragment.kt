@@ -1,4 +1,4 @@
-package es.iessaladillo.esthercastaneda.realtimecorona.ui.search
+package es.com.scoroleth.realtimecorona.ui.search
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.bumptech.glide.Glide
-import es.iessaladillo.esthercastaneda.realtimecorona.R
+import es.com.scoroleth.realtimecorona.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_search.*
 

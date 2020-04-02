@@ -1,4 +1,4 @@
-package es.iessaladillo.esthercastaneda.realtimecorona
+package es.com.scoroleth.realtimecorona
 
 import org.junit.Test
 
